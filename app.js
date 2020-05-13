@@ -7,7 +7,7 @@ const repl = require('repl');
 
 
 //log console output to file
-const consoleLogFile= 'consolelog.txt';
+const consoleLogFile= 'consolelog.log';
 const consoleLog= fs.createWriteStream(consoleLogFile, { 'flags': 'a' });
 consoleLog.write('\n// ************* starting at: ' + new Date().toISOString() + '\n');
 
