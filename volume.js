@@ -1,12 +1,15 @@
 'use strict';
 
+global.volume= {};
 
-
-global.v_cylinder= function(radius, height) {
-    return 'not implemted';
+volume.cylinder= function(radius, height) {
+    if (arguments.length < 2) {
+		return 'usage: volume.cylinder(radius, height)';
+	}
+	return Math.PI * radius * radius * height;
 };
 
 
-global.v_sphere= function(radius) {
-    return 'not implemted';
+volume.sphere= function(radius) {
+    return Math.PI * Math.pow(radius, 3);
 };

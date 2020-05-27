@@ -4,7 +4,7 @@
 const logging= require('./logging.js');
 const math= require('./math.js');
 const volume= require('./volume.js');
-
+const triangle=require('./triangle.js');
 
 
 var r;
