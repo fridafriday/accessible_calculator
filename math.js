@@ -1,5 +1,6 @@
 'use strict';
 
+if (!global) var global= window;
 
 global.E= Math.E;
 global.LN10= Math.LN10;

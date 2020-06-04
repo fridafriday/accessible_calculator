@@ -1,5 +1,7 @@
 'use strict';
 
+if (!global) var global= window;
+
 global.volume= {};
 
 volume.cylinder= function(radius, height) {

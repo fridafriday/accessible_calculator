@@ -1,5 +1,6 @@
 'use strict';
 
+if (!global) var global= window;
 
 
 global.triangle= function(a, b, c, alpha, beta, gamma) {
