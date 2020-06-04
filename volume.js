@@ -2,7 +2,11 @@
 
 if (typeof window !== 'undefined') { var global= global || window; }
 
-global.volume= {};
+global.volume= {
+    toString: function() {
+        return "calculate volume of solids, usage:\nvolume.cylinder(radius, height)\nvolume.sphere(radius)\n"
+    },
+};
 
 volume.cylinder= function(radius, height) {
     if (arguments.length < 2) {
