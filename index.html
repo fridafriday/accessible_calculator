@@ -12,16 +12,15 @@
         <script src="triangle.js"></script>
     </head>
     <body>
-        <button id= "historyButton">Download History</button>
         <script>
-            var deg= true;
+            window._deg= true;
             var terminal= $('body').terminal(function(command) {
                 if (command === 'deg' || command === 'deg()') {
-                    deg= true;
+                    window._deg= true;
                     this.set_prompt('deg>');
                 }
                 else if (command === 'rad' || command === 'rad()') {
-                    deg= false;
+                    window._deg= false;
                     this.set_prompt('rad>');
                 }
                 else if (command !== '') {
@@ -40,9 +39,6 @@
                 greetings: 'Welcome to Accessible Calculator',
                 name: '',
                 prompt: 'deg>'
-            });
-            $( "#historyButton" ).click(function() {
-                 terminal.echo(JSON.stringify(terminal));
             });
         </script>
     </body>

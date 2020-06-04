@@ -1,6 +1,6 @@
 'use strict';
 
-if (!global) var global= window;
+if (typeof window !== 'undefined') { var global= global || window; }
 
 global.volume= {};
 
@@ -13,5 +13,8 @@ volume.cylinder= function(radius, height) {
 
 
 volume.sphere= function(radius) {
+    if (arguments.length < 1) {
+        return 'usage: volume.sphere(radius)';
+    }
     return Math.PI * Math.pow(radius, 3);
 };
