@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Accessible Calculator</title>
+        <meta charset="utf-8">
+        <style></style>
+        <script src="external/jquery-3.3.1.min.js"></script>
+        <script src="external/jquery.terminal.min.js"></script>
+        <link rel="stylesheet" href="external/jquery.terminal.min.css"/>
+
+        <script src="math.js"></script>
+        <script src="volume.js"></script>
+        <script src="triangle.js"></script>
+    </head>
+    <body>
+        <script>
+            window._deg= true;
+            var terminal= $('body').terminal(function(command) {
+                if (command === 'deg' || command === 'deg()') {
+                    window._deg= true;
+                    this.set_prompt('deg>');
+                }
+                else if (command === 'rad' || command === 'rad()') {
+                    window._deg= false;
+                    this.set_prompt('rad>');
+                }
+                else if (command !== '') {
+                    try {
+                        var result = window.eval(command);
+                        if (result !== undefined) {
+                            this.echo(new String(result));
+                        }
+                    } catch(e) {
+                        this.error(new String(e));
+                    }
+                } else {
+                    this.echo('');
+                }
+            }, {
+                greetings: 'Welcome to Accessible Calculator',
+                name: '',
+                prompt: 'deg>'
+            });
+        </script>
+    </body>
+</html>

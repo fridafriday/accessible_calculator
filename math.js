@@ -1,5 +1,6 @@
 'use strict';
 
+if (typeof window !== 'undefined') { var global= global || window; }
 
 global.E= Math.E;
 global.LN10= Math.LN10;
@@ -14,20 +15,20 @@ global.SQRT2= Math.SQRT2;
 global.abs= Math.abs;
 
 global.acos= function(sincos) {
-    return deg ? Math.acos(sincos) * 180 * Math.PI : Math.acos(sincos);
+    return global._deg ? Math.acos(sincos) * 180 * Math.PI : Math.acos(sincos);
 };
 global.acosh= Math.acosh;
 
 global.asin= function(sincos) {
-    return deg ? Math.asin(sincos) * 180 * Math.PI : Math.asin(sincos);
+    return global._deg ? Math.asin(sincos) * 180 * Math.PI : Math.asin(sincos);
 };
 global.asinh= Math.asinh;
 
 global.atan= function(tan) {
-    return deg ? Math.atan(tan) * 180 * Math.PI : Math.atan(tan);
+    return global._deg ? Math.atan(tan) * 180 * Math.PI : Math.atan(tan);
 };
 global.atan2= function(tan) {
-    return deg ? Math.atan2(tan) * 180 * Math.PI : Math.atan2(tan);
+    return global._deg ? Math.atan2(tan) * 180 * Math.PI : Math.atan2(tan);
 };
 global.atanh= Math.atanh;
 
@@ -47,19 +48,19 @@ global.log1p= Math.log1p;
 global.log2= Math.log2;
 
 global.sin= function(degrad) {
-    var result= deg ? Math.sin(Math.PI * degrad / 180) : Math.sin(degrad);
+    var result= global._deg ? Math.sin(Math.PI * degrad / 180) : Math.sin(degrad);
     return result < 1e-14 ? 0 : result;
 };
 global.sinh= Math.sinh;
 
 global.cos= function(degrad) {
-    var result = deg ? Math.cos(Math.PI * degrad / 180) : Math.cos(degrad);
+    var result = global._deg ? Math.cos(Math.PI * degrad / 180) : Math.cos(degrad);
     return result < 1e-14 ? 0 : result;
 };
 global.cosh= Math.cosh;
 
 global.tan= function(degrad) {
-    return deg ? Math.tan(Math.PI * degrad / 180) : Math.tan(degrad);
+    return global._deg ? Math.tan(Math.PI * degrad / 180) : Math.tan(degrad);
 };
 global.tanh= Math.tanh;
 

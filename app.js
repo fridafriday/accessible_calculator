@@ -6,15 +6,15 @@ const math= require('./math.js');
 const volume= require('./volume.js');
 const triangle=require('./triangle.js');
 
-
 var r;
+global._deg= true;
 
 global.deg= function() {
-    deg= true;
+    global._deg= true;
     r.setPrompt('deg>');
 };
 global.rad= function() {
-    deg= false;
+    global._deg= false;
     r.setPrompt('rad>');
 };
 
